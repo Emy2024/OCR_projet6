@@ -33,4 +33,4 @@ Projet réalisé par Emmanuelle Rey
 - MONGO_URI =
 - TOKEN_SECRET =
 
-Puis lancer le serveur : nodemon server
+Puis lancez le serveur : nodemon server
