@@ -1,5 +1,6 @@
-# 🌐 Développez le back-end d'un site de notation de livres
+# 🌐 Développez le back-end d'un site de notation de livres (OpenClassrooms)
 
+Projet réalisé par Emmanuelle Rey
 
 ## Back-end
 
