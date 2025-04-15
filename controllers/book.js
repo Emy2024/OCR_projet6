@@ -129,15 +129,15 @@ exports.deleteBook = (req, res, next) => {
     Book.findOne({ _id: req.params.id})
         .then(book => {
             if (book.userId != req.auth.userId) {
-                res.status(401).json({message: 'Not authorized'});
+                res.status(401).json({message: 'Vous n\'êtes pas authorisé à supprimer ce livre'});
             } else {
                 const filenameThumb = book.imageUrl.split('/images/')[1];
                 const filenameLarge = filenameThumb.split('_thumbnail')[0];
                 fs.unlink(`images/${filenameLarge}.jpg`, () => { });
                 fs.unlink(`images/${filenameLarge}.png`, () => { });
                 fs.unlink(`images/${filenameThumb}`, () => {
-                    book.deleteOne({_id: req.params.id})
-                        .then(() => { res.status(200).json({message: 'book deleted'})})
+                    book.deleteOne({_id: req.params.id}) 
+                        .then(() => { res.status(200).json({message: 'Livre supprimé !'})})
                         .catch(error => res.status(401).json({ error }));
                     });
             }
